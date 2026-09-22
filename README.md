@@ -48,18 +48,18 @@ By orchestrating an autonomous multi-agent pipeline entirely on-device (leveragi
 ```mermaid
 flowchart TD
     subgraph SENSORS["Biometric Telemetry Streams (25Hz)"]
-        HR[Heart Rate (bpm)]
-        SpO2[SpO2 Oxygen (%)]
-        RR[Respiration (rpm)]
-        BP[Blood Pressure (mmHg)]
+        HR["Heart Rate (bpm)"]
+        SpO2["SpO2 Oxygen (%)"]
+        RR["Respiration (rpm)"]
+        BP["Blood Pressure (mmHg)"]
     end
 
     subgraph MULTI_AGENT["On-Device Multi-Agent Intelligence Engine (AegiSyn AI)"]
-        SA["SignalAgent<br/>(Noise Conditioning & Smoothing)"]
-        CLA["ClinicalLogAgent<br/>(EHR Shift Context & History)"]
-        AA["AnomalyAgent<br/>(Multi-Signal Correlation Engine)"]
-        RA["RoutingAgent<br/>(Triage & Decision Support)"]
-        AudA["AuditAgent<br/>(SHA-256 Tamper-Evident Merkle Chain)"]
+        SA["SignalAgent (Noise Conditioning & Smoothing)"]
+        CLA["ClinicalLogAgent (EHR Shift Context & History)"]
+        AA["AnomalyAgent (Multi-Signal Correlation Engine)"]
+        RA["RoutingAgent (Triage & Decision Support)"]
+        AudA["AuditAgent (SHA-256 Tamper-Evident Merkle Chain)"]
     end
 
     subgraph PHONE_HARDWARE["Phone-First Hardware Capabilities"]
@@ -92,7 +92,7 @@ flowchart TD
     
     AA --> AudA
     RA --> AudA
-    AudA -->|Cryptographic Hash Seal| Vault[Encrypted Secure Vault]
+    AudA -->|Cryptographic Hash Seal| Vault["Encrypted Secure Vault"]
 ```
 
 ---
