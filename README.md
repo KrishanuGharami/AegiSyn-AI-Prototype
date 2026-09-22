@@ -1,4 +1,5 @@
 # AegiSyn AI — Privacy-First Clinical Intelligence Platform
+**Tagline:** Privacy-first clinical intelligence.  
 **iQOO Hackathon 2026 — Hyderabad City Battle Submission**  
 **Track:** HealthTech • **City:** Hyderabad • **Target Device:** iQOO Android Smartphones • **Branch:** `main`
 
