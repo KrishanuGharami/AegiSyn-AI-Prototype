@@ -277,6 +277,19 @@ flutter run -d web-server --web-port=8080 --web-hostname=127.0.0.1
 ```
 Open `http://127.0.0.1:8080` in Chrome and toggle Mobile Device Emulation (recommended: 412 × 915).
 
+### Option D: Live Cloud Web Deployment (Vercel)
+AegiSyn AI includes automated configuration (`vercel.json` and `vercel-build.sh`) for zero-config Vercel deployment:
+1. Push changes to GitHub:
+   ```bash
+   git push -u origin main
+   ```
+2. Import the repository in [Vercel Dashboard](https://vercel.com/new).
+3. Vercel automatically runs `bash vercel-build.sh` and serves production web artifacts from `build/web`.
+4. Or deploy instantly using the Vercel CLI:
+   ```bash
+   vercel --prod
+   ```
+
 ---
 
 ## 3-Minute Hackathon Pitch Structure
