@@ -292,21 +292,6 @@ AegiSyn AI includes automated configuration (`vercel.json` and `vercel-build.sh`
 
 ---
 
-## 3-Minute Hackathon Pitch Structure
-
-When presenting to iQOO Hackathon judges:
-
-1. **The Hook (0:00 - 0:40)**:
-   *"Judges, in ICU wards today, up to 90% of vital sign monitor alarms are false alarms. Nurses hear hundreds of beeps an hour, causing dangerous alarm fatigue. But when a true crisis happens, seconds mean life or death. Meet AegiSyn AI: privacy-first clinical intelligence engineered directly for iQOO smartphones."*
-2. **The Problem & The iQOO Edge (0:40 - 1:20)**:
-   *"Current solutions push raw patient vitals to the cloud, introducing 500ms network latency and severe HIPAA data privacy risks. AegiSyn AI uses on-device Snapdragon NPU acceleration to correlate multiple vital signs simultaneously in 11 milliseconds—with zero cloud leakage."*
-3. **The Live Demo (1:20 - 2:30)**:
-   *Show Patient #1048 on the phone. Trigger the multi-signal anomaly. Feel the dual-pulse emergency haptics. Show the AI explaining why tachycardia combined with hypoxia escalated to HIGH priority. Dispatch the alert with voice handover. Show the iQOO Office Kit workstation sync. Open the Security Vault to mathematically verify the SHA-256 Merkle chain.*
-4. **The Impact (2:30 - 3:00)**:
-   *"By combining on-device NPU compute, tactical haptics, Office Kit workstation bridging, and tamper-evident cryptographic auditing, AegiSyn AI makes the smartphone an indispensable clinical command center. Thank you."*
-
----
-
 ## Known Limitations & Development Fallback Disclosure
 
 1. **iQOO Office Kit SDK Fallback**:
