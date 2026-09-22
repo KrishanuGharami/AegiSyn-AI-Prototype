@@ -8,15 +8,21 @@ class SignalAgent implements SignalAnalyzer {
   TelemetryPoint filterAndSmooth(TelemetryPoint raw, List<TelemetryPoint> recentWindow) {
     if (recentWindow.isEmpty) return raw;
 
-    final samples = [...recentWindow.take(3), raw];
-    final avgHr = samples.map((s) => s.heartRate).reduce((a, b) => a + b) / samples.length;
-    final avgSpo2 = samples.map((s) => s.spO2).reduce((a, b) => a + b) / samples.length;
-    final avgResp = samples.map((s) => s.respirationRate).reduce((a, b) => a + b) / samples.length;
+    double sumHr = raw.heartRate;
+    double sumSpo2 = raw.spO2;
+    double sumResp = raw.respirationRate;
+    final count = recentWindow.length > 3 ? 3 : recentWindow.length;
+    for (int i = 0; i < count; i++) {
+      sumHr += recentWindow[i].heartRate;
+      sumSpo2 += recentWindow[i].spO2;
+      sumResp += recentWindow[i].respirationRate;
+    }
+    final total = count + 1;
 
     return raw.copyWith(
-      heartRate: double.parse(avgHr.toStringAsFixed(1)),
-      spO2: double.parse(avgSpo2.toStringAsFixed(1)),
-      respirationRate: double.parse(avgResp.toStringAsFixed(1)),
+      heartRate: double.parse((sumHr / total).toStringAsFixed(1)),
+      spO2: double.parse((sumSpo2 / total).toStringAsFixed(1)),
+      respirationRate: double.parse((sumResp / total).toStringAsFixed(1)),
     );
   }
 

@@ -56,10 +56,16 @@ class WaveformPainter extends CustomPainter {
     final path = Path();
     final fillPath = Path();
 
-    // Scale heart rates dynamically with safe defaults
-    final hrs = history.map((e) => e.heartRate).toList();
-    final minHr = hrs.reduce((a, b) => a < b ? a : b) - 6;
-    final maxHr = hrs.reduce((a, b) => a > b ? a : b) + 6;
+    // Scale heart rates dynamically with safe defaults (zero-allocation loop)
+    double minHr = history.first.heartRate;
+    double maxHr = history.first.heartRate;
+    for (int i = 1; i < history.length; i++) {
+      final hr = history[i].heartRate;
+      if (hr < minHr) minHr = hr;
+      if (hr > maxHr) maxHr = hr;
+    }
+    minHr -= 6;
+    maxHr += 6;
     final range = (maxHr - minHr) > 12 ? (maxHr - minHr) : 12;
 
     final stepX = size.width / (history.length - 1).clamp(1, 100);
